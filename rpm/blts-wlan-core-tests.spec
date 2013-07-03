@@ -1,10 +1,10 @@
 Summary: BLTS WLAN low-level test set
 Name: blts-wlan-core-tests
-Version: 0.1.11
+Version: 0.1.12
 Release: 1
 License: GPLv2
 Group: Development/Testing
-URL: https://github.com/mer-packages/mcts-blts
+URL: https://github.com/mer-qa/blts-wlan-core
 Source0: %{name}-%{version}.tar.gz
 BuildRequires: libbltscommon-devel
 BuildRequires: libnl-devel
