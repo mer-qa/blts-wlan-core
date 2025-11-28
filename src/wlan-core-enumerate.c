@@ -60,6 +60,8 @@
 #include <blts_log.h>
 #include <blts_timing.h>
 
+#include <net/if.h>
+
 #include "wlan-core-enumerate.h"
 #include "wlan-core-utils.h"
 #include "wlan-core-ioctl.h"
@@ -71,7 +73,6 @@
 #include <netlink/msg.h>
 #include <netlink/attr.h>
 
-#include <linux/if.h>
 #include <linux/wireless.h>
 #include <sys/ioctl.h>
 
@@ -685,10 +686,10 @@ static int dump_range(wlan_core_data* data)
 		goto error;
 	}
 
-    if (print_freq_info(data, *range) ||
-    	print_auth_info(data, *range) ||
-    	print_event_capa_info(data, *range) )
-    	goto error;
+	if (print_freq_info(data, *range) ||
+	    print_auth_info(data, *range) ||
+	    print_event_capa_info(data, *range) )
+		goto error;
 
 	free(range);
 	return 0;

@@ -3,7 +3,6 @@ Name: blts-wlan-core-tests
 Version: 0.1.12
 Release: 1
 License: GPLv2
-Group: Development/Testing
 URL: https://github.com/mer-qa/blts-wlan-core
 Source0: %{name}-%{version}.tar.gz
 BuildRequires: libbltscommon-devel
@@ -28,17 +27,15 @@ This package contains configuration example for WLAN functional tests.
 %build
 ./autogen.sh
 %configure --prefix=%{_prefix} --libdir=%{_prefix}
-make
+%make_build
 
 %install
-make install DESTDIR=$RPM_BUILD_ROOT
+%make_install
 
 %files
-%defattr(-,root,root,-)
 %doc README COPYING
 %{_prefix}/bin/*
 
 %files config-example
-%defattr(-,root,root,-)
 %{_prefix}/cnf/blts-wlan-core-tests.cnf
 %{_prefix}/tests.xml

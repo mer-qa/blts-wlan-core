@@ -81,6 +81,7 @@
 #include <stdlib.h>
 
 #include <blts_log.h>
+#include <blts_params.h>
 
 #include "wlan-core-utils.h"
 #include "wlan-core-eloop.h"
